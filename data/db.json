@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "welcome to the new blog",
+      "body": "In this tutorial, I will show you how to build a MEVN stack (Vue.js + Node.js + Express + MongoDB) example with a CRUD Application. The back-end server uses Node.js + Express for REST APIs, front-end side is a Vue client with Vue Router and axios.",
+      "tags": ["webdev", "coding", "news"]
+    },
+    {
+      "id": 2,
+      "title": "top 5 CSS tips",
+      "body": "More Practice: Node.js Express + Vue.js: JWT Authentication & Authorization example.Run both projects (back-end & front-end) in one place:How to serve/combine Vue App with Express",
+      "tags": ["css", "webdev", "coding"]
+    }
+  ]
+}
