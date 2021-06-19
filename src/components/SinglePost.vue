@@ -4,7 +4,7 @@
       <h3>{{ post.title }}</h3>
     </router-link>
     <p>{{ snippet }}</p>
-    <span v-for="tag in post.tags" :key="tag"> #{{ tag }} </span>
+    <span v-for="tag in post.tags" :key="tag" class="tag"> #{{ tag }} </span>
   </div>
 </template>
 
@@ -48,5 +48,14 @@ export default {
   padding-right: 40px;
   left: -30px;
   transform: rotateZ(-1deg);
+}
+.post .tag {
+  color: white;
+  display: inline-block;
+  background-color: #999;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 14px;
+  cursor: pointer;
 }
 </style>
