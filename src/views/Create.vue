@@ -16,6 +16,7 @@
 <script>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { projectFirestore } from '../firebase/config';
 
 export default {
   setup() {
@@ -35,22 +36,16 @@ export default {
     };
 
     const handleSubmit = async () => {
-      await fetch('http://localhost:3000/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: title.value,
-          body: body.value,
-          tags: tags.value,
-        }),
-      })
-        .then(() => {
-          console.log('success');
-          router.push({ name: 'Home' });
-        })
-        .catch((err) => {
-          console.log(err.message);
-        });
+      const post = {
+        title: title.value,
+        body: body.value,
+        tags: tags.value,
+      };
+
+      const res = await projectFirestore.collection('posts').add(post);
+      // console.log(res);
+
+      router.push({ name: 'Home' });
     };
 
     return { title, body, tag, handleKeydown, tags, handleSubmit };
